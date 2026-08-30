@@ -1,0 +1,20 @@
+[Unit]
+Description=Edge Pulse collector (RPC/gateway measurement -> alpha1 ingest)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/pi/edge-pulse-collector
+EnvironmentFile=/home/pi/edge-pulse-collector/.env
+ExecStart=/usr/bin/node index.js
+Restart=on-failure
+RestartSec=10
+User=pi
+
+# Same posture as the rest of this box: this unit only ever talks to the
+# ingest URL you set in .env. It does not need and is not granted any
+# relationship to the myst or teneo-beacon units also running here.
+
+[Install]
+WantedBy=multi-user.target

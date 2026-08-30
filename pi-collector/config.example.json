@@ -1,0 +1,40 @@
+{
+  "_comment": "Copy to config.json and edit. Nothing here is secret except the ingest key, which stays in .env instead.",
+
+  "vantage": "yyc-home",
+
+  "probeIntervalMs": 30000,
+  "publishIntervalMs": 60000,
+  "probeTimeoutMs": 5000,
+  "maxBatchSize": 500,
+
+  "bufferFile": "./data/buffer.ndjson",
+  "bufferFileTmp": "./data/buffer.sending.ndjson",
+
+  "endpoints": [
+    {
+      "chain": "eth",
+      "provider": "llamarpc",
+      "url": "https://eth.llamarpc.com",
+      "kind": "evm-rpc"
+    },
+    {
+      "chain": "eth",
+      "provider": "publicnode",
+      "url": "https://ethereum-rpc.publicnode.com",
+      "kind": "evm-rpc"
+    },
+    {
+      "chain": "sol",
+      "provider": "solana-mainnet",
+      "url": "https://api.mainnet-beta.solana.com",
+      "kind": "solana-rpc"
+    },
+    {
+      "chain": "pokt",
+      "provider": "pocket-gateway",
+      "url": "REPLACE_WITH_YOUR_POCKET_GATEWAY_URL",
+      "kind": "evm-rpc"
+    }
+  ]
+}

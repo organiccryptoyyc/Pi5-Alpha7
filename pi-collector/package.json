@@ -1,0 +1,14 @@
+{
+  "name": "edge-pulse-collector",
+  "version": "1.0.0",
+  "description": "Independent RPC/gateway measurement collector for alpha1's edge/rpc-pulse product. Zero external dependencies on purpose -- uses Node's built-in fetch, fs, and crypto only.",
+  "type": "module",
+  "main": "index.js",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {}
+}
